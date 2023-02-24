@@ -1,13 +1,14 @@
 package com.example.springboottutorialvalidate.controller;
 
-import com.example.springboottutorialvalidate.db.h2.entity.H2CurrencyEntity;
-import com.example.springboottutorialvalidate.db.h2.repo.H2CurrencyRepository;
-import com.example.springboottutorialvalidate.db.mysql.entity.MysqlCurrencyEntity;
-import com.example.springboottutorialvalidate.db.mysql.repo.MysqlCurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.springboottutorialvalidate.db.entity.H2CurrencyEntity;
+import com.example.springboottutorialvalidate.db.entity.MysqlCurrencyEntity;
+import com.example.springboottutorialvalidate.db.repo.H2CurrencyRepository;
+import com.example.springboottutorialvalidate.db.repo.MysqlCurrencyRepository;
 
 @RestController
 @RequestMapping("/dataBase")

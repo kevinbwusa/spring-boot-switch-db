@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -16,10 +17,11 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 
 @Component
-@EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.mysql.repo"},
+@Profile("!dev & !engineering")
+@EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.repo"},
         entityManagerFactoryRef = "mysqlEntityManagerFactory",
         transactionManagerRef = "mysqlTransactionManager")
-@EntityScan(basePackages = "com.example.springboottutorialvalidate.db.mysql.entity")
+@EntityScan(basePackages = "com.example.springboottutorialvalidate.db.entity")
 public class MysqlConfig {
 
     @Bean("mysqlDataSource")
@@ -36,7 +38,7 @@ public class MysqlConfig {
         propertiesMap.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         return builder
                 .dataSource(h2DataSource)
-                .packages("com.example.springboottutorialvalidate.db.mysql.entity")
+                .packages("com.example.springboottutorialvalidate.db.entity")
                 .properties(propertiesMap)
                 .persistenceUnit("mDs")
                 .build();

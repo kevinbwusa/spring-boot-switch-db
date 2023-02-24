@@ -1,4 +1,4 @@
-package com.example.springboottutorialvalidate.db.mysql.entity;
+package com.example.springboottutorialvalidate.db.entity;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TB_TRANSLATE")
 @Data
-public class MysqlCurrencyEntity {
+public class H2CurrencyEntity {
 
     @Id
     @Column(name = "CURRENCY")

@@ -8,6 +8,7 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -18,10 +19,11 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.h2.repo"},
+@Profile("dev | engineering")
+@EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.repo"},
         entityManagerFactoryRef = "h2EntityManagerFactory",
         transactionManagerRef = "h2TransactionManager")
-@EntityScan(basePackages = "com.example.springboottutorialvalidate.db.h2.entity")
+@EntityScan(basePackages = "com.example.springboottutorialvalidate.db.entity")
 public class H2Config {
 
     @Bean("h2DataSource")
@@ -40,7 +42,7 @@ public class H2Config {
         propertiesMap.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         return builder
                 .dataSource(h2DataSource)
-                .packages("com.example.springboottutorialvalidate.db.h2.entity")
+                .packages("com.example.springboottutorialvalidate.db.entity")
                 .properties(propertiesMap)
                 .persistenceUnit("hDs")
                 .build();

@@ -1,8 +1,9 @@
-package com.example.springboottutorialvalidate.db.mysql.repo;
+package com.example.springboottutorialvalidate.db.repo;
 
-import com.example.springboottutorialvalidate.db.mysql.entity.MysqlCurrencyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.example.springboottutorialvalidate.db.entity.MysqlCurrencyEntity;
 
 
 @Repository
