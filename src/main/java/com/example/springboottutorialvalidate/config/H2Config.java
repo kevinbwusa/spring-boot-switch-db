@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class H2Config {
 
     @Bean("h2DataSource")
-    @ConfigurationProperties("app.datasource.h2")
+    @ConfigurationProperties("spring.datasource.h2")
     @Primary
     public DataSource h2DataSource() {
         return DataSourceBuilder.create().build();

@@ -1,6 +1,6 @@
 spring.profiles.active: engineering
 
-app:
+spring:
   datasource:
     h2:
       jdbc-url: jdbc:h2:mem:mydb

@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class MysqlConfig {
 
     @Bean("mysqlDataSource")
-    @ConfigurationProperties("app.datasource.mysql")
+    @ConfigurationProperties("spring.datasource.mysql")
     public DataSource mysqlDataSource() {
         return DataSourceBuilder.create().build();
     }
