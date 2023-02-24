@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 
 @Component
-@Profile("!dev & !engineering")
+@Profile("!dev & !engineering & !testdev")
 @EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.repo"},
         entityManagerFactoryRef = "mysqlEntityManagerFactory",
         transactionManagerRef = "mysqlTransactionManager")
@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class MysqlConfig {
 
     @Bean("mysqlDataSource")
-    @ConfigurationProperties("spring.datasource.mysql")
+    @ConfigurationProperties("app.datasource.mysql")
     public DataSource mysqlDataSource() {
         return DataSourceBuilder.create().build();
     }

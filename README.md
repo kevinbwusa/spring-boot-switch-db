@@ -1,2 +1,3 @@
 # spring-tutorial
-讀書會專用
+
+Start the docker container in src/main/docker/mysql.yml when running in prod

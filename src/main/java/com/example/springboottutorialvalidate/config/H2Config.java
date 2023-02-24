@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 
 @Configuration
-@Profile("dev | engineering")
+@Profile("dev | engineering | testdev")
 @EnableJpaRepositories(basePackages = {"com.example.springboottutorialvalidate.db.repo"},
         entityManagerFactoryRef = "h2EntityManagerFactory",
         transactionManagerRef = "h2TransactionManager")
@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class H2Config {
 
     @Bean("h2DataSource")
-    @ConfigurationProperties("spring.datasource.h2")
+    @ConfigurationProperties("app.datasource.h2")
     @Primary
     public DataSource h2DataSource() {
         return DataSourceBuilder.create().build();

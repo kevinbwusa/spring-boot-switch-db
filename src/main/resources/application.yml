@@ -1,9 +1,21 @@
-spring.profiles.active: engineering
-
 spring:
   datasource:
+    initialization-mode: always
+  profiles:
+    active: engineering
+  jpa:
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: true
+      naming:
+        physical-strategy: org.hiberate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+app:
+  datasource:
     h2:
-      jdbc-url: jdbc:h2:mem:mydb
+      jdbc-url: jdbc:h2:file:./target/h2db/db/mydb;AUTO_SERVER=true
+      # jdbc-url: jdbc:h2:mem:mydb
       username: sa
       password:
       driverClassName: org.h2.Driver
