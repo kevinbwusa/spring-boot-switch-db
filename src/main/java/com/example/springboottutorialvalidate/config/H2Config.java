@@ -44,7 +44,7 @@ public class H2Config {
                 .dataSource(h2DataSource)
                 .packages("com.example.springboottutorialvalidate.db.entity")
                 .properties(propertiesMap)
-                .persistenceUnit("hDs")
+                .persistenceUnit("h2mem")
                 .build();
     }
 

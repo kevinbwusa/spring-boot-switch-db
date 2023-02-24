@@ -40,7 +40,7 @@ public class MysqlConfig {
                 .dataSource(h2DataSource)
                 .packages("com.example.springboottutorialvalidate.db.entity")
                 .properties(propertiesMap)
-                .persistenceUnit("mDs")
+                .persistenceUnit("mysql")
                 .build();
     }
 
