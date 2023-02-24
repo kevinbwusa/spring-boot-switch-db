@@ -1,0 +1,14 @@
+app:
+  datasource:
+    h2:
+      jdbc-url: jdbc:h2:mem:mydb
+      username: sa
+      password:
+      driverClassName: org.h2.Driver
+
+    mysql:
+      jdbc-url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/test2
+      username: root
+      password:
+      driverClassName: com.mysql.cj.jdbc.Driver
+
